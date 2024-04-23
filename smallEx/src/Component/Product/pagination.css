@@ -1,0 +1,20 @@
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0px;
+}
+
+#loadbtn {
+  margin: -160% auto;
+  width: auto;
+  height: 50px;
+}
+
+@media screen and (max-width: 600px) {
+  #loadbtn {
+    margin: -106% auto;
+    width: auto;
+    height: 50px;
+  }
+}
