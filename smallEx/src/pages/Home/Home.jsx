@@ -4,6 +4,8 @@ import { Route, Router, RouterProvider, Routes } from "react-router-dom";
 import Topnavbar from "../../Component/Navbar/Topnavbar";
 import Bottombar from "../../Component/Navbar/Bottombar";
 import Sellproduct from "../../Component/Sellproduct/Sellproduct";
+import Seeproduct from "../../Component/Product/Seeproduct";
+import SFooter from "../SFooter";
 
 export default function Home() {
   return (
@@ -21,6 +23,10 @@ export default function Home() {
           <Route path="/myproduct" element={<h1>my product</h1>} />
           <Route path="/account" element={<h1>Account</h1>} />
         </Routes>
+      </div>
+
+      <div className="footer">
+        <SFooter />
       </div>
     </>
   );

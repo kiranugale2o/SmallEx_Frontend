@@ -6,12 +6,11 @@ import Pagination from "./Pagination";
 export default function Product() {
   const [product, setProduct] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostsPerPage] = useState(9);
-
+  const [postsPerPage, setPostsPerPage] = useState(8);
   const lastPostIndex = currentPage * postsPerPage;
   const firstPostIndex = 0;
-  const currentPosts = product.slice(firstPostIndex, lastPostIndex);
 
+  const currentPosts = product.slice(firstPostIndex, lastPostIndex);
   useEffect(() => {
     const getSong = async () => {
       await fetch("https://free-music-api2.vercel.app/getSongs").then((res) =>
@@ -28,7 +27,14 @@ export default function Product() {
       <div className="products" style={{ width: "100%" }}>
         <div className="products" style={{ margin: "10% auto" }}>
           {currentPosts.map((d, index) => {
-            return <Productcard key={index} some={index} />;
+            return (
+              <Productcard
+                key={index}
+                i={index}
+                setCurrentPage={setCurrentPage}
+                setPostsPerPage={setPostsPerPage}
+              />
+            );
           })}
         </div>
 
