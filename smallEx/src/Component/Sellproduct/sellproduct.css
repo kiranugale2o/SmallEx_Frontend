@@ -12,6 +12,11 @@
   background-color: #fff;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
+#box {
+  width: 100%;
+  margin: 10% auto;
+  height: 700px;
+}
 .container header {
   position: relative;
   font-size: 20px;
