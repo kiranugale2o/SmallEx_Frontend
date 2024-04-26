@@ -1,0 +1,22 @@
+#noti {
+  width: 80%;
+  margin: 8% auto;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+#mynoti {
+  width: 80%;
+  margin: auto;
+}
+@media (max-width: 584px) {
+  #noti {
+    margin: 20% auto;
+    width: 100%;
+    height: auto;
+  }
+  #mynoti {
+    width: 100%;
+    margin: auto;
+  }
+}
