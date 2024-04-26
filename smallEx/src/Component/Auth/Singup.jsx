@@ -3,8 +3,10 @@ import "./singup.css";
 import { imageHandler } from "../../firebase/firebase";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { NavLink, useNavigate } from "react-router-dom";
 
 export default function Singup() {
+  const navigate = useNavigate();
   const [first_name, setFname] = useState("");
   const [last_name, setLname] = useState("");
   const [profileImg, setImg] = useState("");
@@ -35,6 +37,7 @@ export default function Singup() {
       res.json().then((d) => {
         if (res.status === 200) {
           toast.success("SuccessFully singup !");
+          navigate("/login");
         } else {
           toast.warning(d.message);
         }
@@ -124,7 +127,14 @@ export default function Singup() {
             <div className="button">
               <input type="submit" defaultValue="Register" />
             </div>
+            <div className="text-center" style={{ margin: "5px auto" }}>
+              Already have an account?
+              <NavLink to="/login" style={{ textDecoration: "none" }}>
+                login{" "}
+              </NavLink>
+            </div>
           </form>
+
           <ToastContainer />
         </div>
       </div>
