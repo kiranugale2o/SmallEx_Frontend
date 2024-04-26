@@ -27,7 +27,7 @@ export default function Singup() {
       password,
     };
     console.log(user);
-    await fetch("http://localhost:4000/user/singup", {
+    await fetch("https://small-ex-like-olx.vercel.app/user/singup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
