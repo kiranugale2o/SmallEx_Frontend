@@ -11,6 +11,10 @@ import { BrowserRouter, Route, RouterProvider, Routes } from "react-router-dom";
 import Singup from "./Component/Auth/Singup";
 import Login from "./Component/Auth/Login";
 import Map from "./Component/Map/Map";
+import Seeproduct from "./Component/Product/Seeproduct";
+import Sellproduct from "./Component/Sellproduct/Sellproduct";
+import Notification from "./Component/Notification/Notification";
+import Myproduct from "./Component/Mystore/Myproduct";
 
 function App() {
   return (
@@ -20,11 +24,11 @@ function App() {
           <Route path="/singup" element={<Singup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<Home />}>
-            <Route path="/product" />
-            <Route path="/seeproduct" />
-            <Route path="/sell" />
-            <Route path="/notification" />
-            <Route path="/mystore" />
+            <Route path="/product" element={<Product />} />
+            <Route path="/seeproduct" element={<Seeproduct />} />
+            <Route path="/sell" element={<Sellproduct />} />
+            <Route path="/notification" element={<Notification />} />
+            <Route path="/mystore" element={<Myproduct />} />
             <Route path="/account" />
           </Route>
           <Route path="/about" element={<Topnavbar />} />
