@@ -10,7 +10,7 @@ export default function SFooter({ id }) {
     const data = {
       email,
     };
-    await fetch(`http://localhost:4000/user/subscriber/${id}`, {
+    await fetch(`https://small-ex-like-olx.vercel.app/user/subscriber/${id}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
