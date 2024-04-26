@@ -1,0 +1,10 @@
+#map {
+  width: 50%;
+  margin: 0px 10px;
+}
+
+@media screen and (max-width: 600px) {
+  #map {
+    width: 100%;
+  }
+}
