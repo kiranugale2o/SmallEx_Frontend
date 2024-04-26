@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./seeproduct.css";
+import Map from "../Map/Map";
 export default function Seeproduct(props) {
+  const [data, setData] = useState(props.product);
+
   return (
     <>
       <div className="seeproduct-page">
@@ -15,7 +18,15 @@ export default function Seeproduct(props) {
           <div className="carousel-inner">
             <div className="carousel-item active">
               <img
-                src="programmer.jpg"
+                src={data[props.index].product_img1}
+                className="d-block w-100"
+                alt="..."
+                style={{ height: "500px", width: "20%" }}
+              />
+            </div>
+            <div className="carousel-item">
+              <img
+                src={data[props.index].product_img2}
                 className="d-block w-100"
                 alt="..."
                 style={{ height: "500px" }}
@@ -23,15 +34,7 @@ export default function Seeproduct(props) {
             </div>
             <div className="carousel-item">
               <img
-                src="programmer.jpg"
-                className="d-block w-100"
-                alt="..."
-                style={{ height: "500px" }}
-              />
-            </div>
-            <div className="carousel-item">
-              <img
-                src="programmer.jpg"
+                src={data[props.index].product_img3}
                 className="d-block w-100"
                 alt="..."
                 style={{ height: "500px" }}
@@ -62,7 +65,7 @@ export default function Seeproduct(props) {
           <div className="box-1">
             <div
               className="info shadow-lg p-3 mb-5 bg-body-tertiary rounded border"
-              style={{ width: "100%", height: "30vh" }}
+              style={{ width: "100%", height: "auto", display: "block" }}
             >
               <span
                 class="badge text-bg-warning"
@@ -71,17 +74,17 @@ export default function Seeproduct(props) {
                 FEATURED
               </span>
               <p className="text-start h2" style={{ fontWeight: "800" }}>
-                Product Name{props.index}
+                {data[props.index].name}
               </p>
               <p className="text-start " style={{ fontSize: "18px" }}>
-                Product description fromus erjrfkakjsb{" "}
+                {data[props.index].product_des}
               </p>
             </div>
             <div
               className="shadow-lg p-3 mb-5 bg-body-tertiary rounded border"
               style={{
                 width: "100%",
-                height: "30vh",
+                height: "auto",
                 margin: "-5% auto",
                 display: "block",
               }}
@@ -101,7 +104,7 @@ export default function Seeproduct(props) {
                 </svg>
                 <p className="text-start h5">Loction</p>
               </div>
-              <p className="text-start ">sai shardha nagar,umarakhed </p>
+              <p className="text-start "> {data[props.index].location} </p>
             </div>
           </div>
 
@@ -111,7 +114,7 @@ export default function Seeproduct(props) {
               style={{ width: "100%", height: "30vh" }}
             >
               <div className="text-start h1" style={{ fontWeight: "800" }}>
-                Rs.85000
+                Rs.{data[props.index].price}
               </div>
               <br />
               <div
@@ -124,7 +127,15 @@ export default function Seeproduct(props) {
                   fontWeight: "600",
                 }}
               >
-                Make Offer
+                <a
+                  href={`https://wa.me/${
+                    data[props.index].ownerId.mobile
+                  }?text=My offer is`}
+                  style={{ textDecoration: "none", color: "white" }}
+                >
+                  {" "}
+                  Chat With Seller
+                </a>
               </div>
             </div>
             <div
@@ -139,7 +150,7 @@ export default function Seeproduct(props) {
               <div className="owner" style={{ display: "flex" }}>
                 <div className="icon">
                   <img
-                    src="user.png"
+                    src={data[props.index].ownerId.profileImg}
                     className="border rounded-circle"
                     alt="user"
                     width={60}
@@ -147,19 +158,29 @@ export default function Seeproduct(props) {
                   />
                 </div>
                 <div className="text-center h4" style={{ margin: "4% 10px" }}>
-                  Snatosh Wankhede
+                  {data[props.index].ownerId.name}
                 </div>
               </div>
               <div
                 className="btn btn-dark"
                 style={{ margin: "5% auto", width: "100%", fontSize: "20px" }}
               >
-                Chat With Seller
+                <a
+                  href={`https://wa.me/${
+                    data[props.index].ownerId.mobile
+                  }?text=intrested`}
+                  style={{ textDecoration: "none", color: "white" }}
+                >
+                  {" "}
+                  Chat With Seller
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <Map />
     </>
   );
 }
