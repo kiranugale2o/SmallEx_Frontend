@@ -1,6 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import "./sfooter.css";
-export default function SFooter() {
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+export default function SFooter({ id }) {
+  const [email, setEmail] = useState();
+
+  const subscribeHandler = async (e) => {
+    e.preventDefault();
+    const data = {
+      email,
+    };
+    await fetch(`http://localhost:4000/user/subscriber/${id}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }).then((res) =>
+      res.json().then((d) => {
+        if (res.status === 200) {
+          toast.success(d.message);
+          setEmail("");
+        } else {
+          toast.error(d.message);
+          setEmail("");
+        }
+      })
+    );
+  };
   return (
     <>
       <section className="footer">
@@ -77,8 +104,14 @@ export default function SFooter() {
               Subscribe to our newsletter for a weekly dose of news, updates,
               helpful tips, and exclusive offers.
             </p>
-            <form action="#">
-              <input type="text" placeholder="Your email" required="" />
+            <form onSubmit={subscribeHandler} method="POST">
+              <input
+                type="text"
+                placeholder="Your email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
               <button type="submit">SUBSCRIBE</button>
             </form>
             <div className="icons">
@@ -90,6 +123,7 @@ export default function SFooter() {
           </div>
         </div>
       </section>
+      <ToastContainer />
     </>
   );
 }
