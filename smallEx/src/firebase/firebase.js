@@ -17,7 +17,6 @@ initializeApp(firebaseConfig);
 const storage = getStorage();
 var data;
 export const imageHandler = async (userImg) => {
-  console.log(userImg);
   const mountainsRef = ref(storage, `smallEx/${userImg.name}`);
 
   // Create a reference to 'images/mountains.jpg'
