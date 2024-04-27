@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Product from "../../Component/Product/Product";
-import {
+import { 
   Route,
   Router,
   RouterProvider,
