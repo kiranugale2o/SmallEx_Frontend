@@ -4,7 +4,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import Topnavbar from "./Component/Navbar/Topnavbar";
 import Bottombar from "./Component/Navbar/Bottombar";
-import { HashRouter } from "react-router-dom";
+
 import Product from "./Component/Product/Product";
 import Home from "./pages/Home/Home";
 import { BrowserRouter, Route, RouterProvider, Routes } from "react-router-dom";
@@ -19,7 +19,7 @@ import Myproduct from "./Component/Mystore/Myproduct";
 function App() {
   return (
     <>
-      <HashRouter>
+      <BrowserRouter>
         <Routes>
           <Route path="/singup" element={<Singup />} />
           <Route path="/login" element={<Login />} />
@@ -33,7 +33,7 @@ function App() {
           </Route>
           <Route path="/about" element={<Topnavbar />} />
         </Routes>
-      </HashRouter>
+      </BrowserRouter>
     </>
   );
 }
