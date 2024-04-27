@@ -23,6 +23,7 @@ function App() {
         <Routes>
           <Route path="/singup" element={<Singup />} />
           <Route path="/login" element={<Login />} />
+           <Route path="/sell" element={<Login />} />
           <Route path="/" element={<Home />}>
             <Route path="/product"  />
             <Route path="/seeproduct" />
