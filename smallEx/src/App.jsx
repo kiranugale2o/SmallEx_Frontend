@@ -7,7 +7,7 @@ import Bottombar from "./Component/Navbar/Bottombar";
 
 import Product from "./Component/Product/Product";
 import Home from "./pages/Home/Home";
-import { BrowserRouter, Route, RouterProvider, Routes } from "react-router-dom";
+import { BrowserRouter, Route,  Routes } from "react-router-dom";
 import Singup from "./Component/Auth/Singup";
 import Login from "./Component/Auth/Login";
 import Map from "./Component/Map/Map";
