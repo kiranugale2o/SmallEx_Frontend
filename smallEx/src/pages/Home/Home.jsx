@@ -56,7 +56,7 @@ export default function Home() {
         <Routes>
           <Route path="/" element={<Product />}>
             <Route path="/seeproduct" />
-          </Route>
+         
           <Route
             path="/notification"
             element={<Notification id={id} data={user} />}
@@ -64,6 +64,7 @@ export default function Home() {
           <Route path="/sell" element={<Sellproduct id={id} />} />
           <Route path="/mystore" element={<Myproduct id={id} />} />
           <Route path="/account" element={<Profile data={user} />} />
+             </Route>
         </Routes>
       </div>
 
