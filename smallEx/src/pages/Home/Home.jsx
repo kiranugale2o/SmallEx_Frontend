@@ -54,8 +54,7 @@ export default function Home() {
       <div className="" style={{ width: "100%" }}>
         <Routes>
           <Route path="/" element={<Product />}>
-            <Route path="/seeproduct" />
-         
+            <Route path="/seeproduct"  />
           <Route
             path="/notification"
             element={<Notification id={id} data={user} />}
