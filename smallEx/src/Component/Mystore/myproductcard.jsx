@@ -80,7 +80,7 @@ export default function Myproductcard(props) {
         style={{ display: `${pdis}`, height: "auto", width: "auto" }}
       >
         <div className="border " style={{ width: "auto", height: "auto" }}>
-          <img src="programmer.jpg" id="pimg" alt="" />
+          <img src={props.data.profile_img1} id="pimg" alt="" />
         </div>
         <div className="d-block">
           <div
