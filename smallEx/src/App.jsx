@@ -27,7 +27,18 @@ function App() {
   const navigate = useNavigate();
   const [user, setUser] = useState();
   const [id, setId] = useState("");
+  const [index, setIndex] = useState(0);
+  const [product, setProduct] = useState([]);
 
+  const getProduct = async () => {
+    await fetch(
+      "https://small-ex-like-olx.vercel.app/product/allproducts"
+    ).then((res) =>
+      res.json().then((d) => {
+        setProduct(d);
+      })
+    );
+  };
   useEffect(() => {
     const auth = async () => {
       fetch("https://small-ex-like-olx.vercel.app/user/auth", {
@@ -50,6 +61,7 @@ function App() {
     };
 
     auth();
+    getProduct();
   }, []);
 
   return (
@@ -61,9 +73,11 @@ function App() {
       <Routes>
         <Route path="/singup" element={<Singup />} />
         <Route path="/login" element={<Login />} />
-         <Route path="/" element={<Product />}>
-          <Route path="/seeproduct" />
-        </Route>
+        <Route path="/" element={<Product setIndex={setIndex} />}></Route>
+        <Route
+          path="/seeproduct"
+          element={<Seeproduct index={index} product={product} />}
+        />
         <Route
           path="/notification"
           element={<Notification id={id} data={user} />}
