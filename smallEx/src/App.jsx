@@ -61,7 +61,7 @@ function App() {
       <Routes>
         <Route path="/singup" element={<Singup />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/" element={<Home id={id} />}>
+         <Route path="/" element={<Product />}>
           <Route path="/seeproduct" />
         </Route>
         <Route
