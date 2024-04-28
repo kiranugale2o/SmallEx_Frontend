@@ -130,7 +130,7 @@ export default function Seeproduct(props) {
                 <a
                   href={`https://wa.me/${
                     data[props.index].ownerId.mobile
-                  }?text=My offer is`}
+                  }`}
                   style={{ textDecoration: "none", color: "white" }}
                 >
                   {" "}
@@ -168,7 +168,7 @@ export default function Seeproduct(props) {
                 <a
                   href={`https://wa.me/${
                     data[props.index].ownerId.mobile
-                  }?text=intrested`}
+                  }`}
                   style={{ textDecoration: "none", color: "white" }}
                 >
                   {" "}
