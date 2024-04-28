@@ -5,17 +5,18 @@ import Pagination from "./Pagination";
 import { NavLink, Route, Router, Routes } from "react-router-dom";
 import Seeproduct from "./Seeproduct";
 
-export default function Product() {
+export default function Product(props) {
   const [product, setProduct] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage, setPostsPerPage] = useState(8);
-  const [index, setIndex] = useState(0);
+
   const lastPostIndex = currentPage * postsPerPage;
+
   const firstPostIndex = 0;
 
   const currentPosts = product.slice(firstPostIndex, lastPostIndex);
   useEffect(() => {
-    const getSong = async () => {
+    const getProduct = async () => {
       await fetch(
         "https://small-ex-like-olx.vercel.app/product/allproducts"
       ).then((res) =>
@@ -24,7 +25,7 @@ export default function Product() {
         })
       );
     };
-    getSong();
+    getProduct();
   }, []);
 
   return (
@@ -41,7 +42,7 @@ export default function Product() {
                       <Productcard
                         key={index}
                         i={index}
-                        setIndex={setIndex}
+                        setIndex={props.setIndex}
                         data={d}
                       />
                     );
@@ -59,10 +60,6 @@ export default function Product() {
                 />
               </>
             }
-          />
-          <Route
-            path="/seeproduct"
-            element={<Seeproduct index={index} product={product} />}
           />
         </Routes>
       </div>
