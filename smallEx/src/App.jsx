@@ -6,7 +6,7 @@ import Topnavbar from "./Component/Navbar/Topnavbar";
 import Bottombar from "./Component/Navbar/Bottombar";
 import { HashRouter } from "react-router-dom";
 import Product from "./Component/Product/Product";
-import Home from "./pages/Home/Home";
+
 import {
   BrowserRouter,
   Route,
@@ -15,6 +15,7 @@ import {
   useNavigate,
 } from "react-router-dom";
 import Singup from "./Component/Auth/Singup";
+import SFooter from "../SFooter";
 import Login from "./Component/Auth/Login";
 import Map from "./Component/Map/Map";
 import Seeproduct from "./Component/Product/Seeproduct";
@@ -87,6 +88,10 @@ function App() {
         <Route path="/account" element={<Profile data={user} />} />
         <Route path="/about" element={<Topnavbar />} />
       </Routes>
+
+      <div className="footer">
+        <SFooter id={id} />
+      </div>
     </>
   );
 }
