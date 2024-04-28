@@ -128,7 +128,7 @@ export default function Seeproduct(props) {
                 }}
               >
                 <a
-                  href={`https://wa.me/${
+                  href={`https://wa.me/+91${
                     data[props.index].ownerId.mobile
                   }`}
                   style={{ textDecoration: "none", color: "white" }}
@@ -166,7 +166,7 @@ export default function Seeproduct(props) {
                 style={{ margin: "5% auto", width: "100%", fontSize: "20px" }}
               >
                 <a
-                  href={`https://wa.me/${
+                  href={`https://wa.me/+91${
                     data[props.index].ownerId.mobile
                   }`}
                   style={{ textDecoration: "none", color: "white" }}
