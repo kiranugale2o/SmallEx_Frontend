@@ -15,7 +15,7 @@ import {
   useNavigate,
 } from "react-router-dom";
 import Singup from "./Component/Auth/Singup";
-import SFooter from "../SFooter";
+import SFooter from "./pages/SFooter";
 import Login from "./Component/Auth/Login";
 import Map from "./Component/Map/Map";
 import Seeproduct from "./Component/Product/Seeproduct";
